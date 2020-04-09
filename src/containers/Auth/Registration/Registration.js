@@ -1,9 +1,6 @@
 import React, {Component} from 'react';
-import {connect} from 'react-redux';
 import classes from './Registration.module.css';
 import Input from '../../../components/UI/Input/Input';
-import * as actions from '../../../store/actions/index';
-import {authFail, authSuccess} from "../../../store/actions/auth";
 import {AxiosInstance as axios} from "axios";
 
 class Registration extends Component {

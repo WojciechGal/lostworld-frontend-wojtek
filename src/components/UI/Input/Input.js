@@ -34,6 +34,11 @@ const input = (props) => {
         validationError = <p className={classes.ValidationError}>Wprowadź poprawne dane</p>
     }
 
+    if (props.invalid && props.touched && props.isUsernameCorrect) {
+        validationOfUsername = <p className={classes.ValidationError}>Wprowadź poprawną nazwę użytkownika</p>;
+        validationError = validationOfUsername;
+    }
+
     if (props.invalid && props.touched && props.isEmailCorrect) {
         validationOfEmail = <p className={classes.ValidationError}>Wprowadź poprawny adres e-mail</p>;
         validationError = validationOfEmail;
