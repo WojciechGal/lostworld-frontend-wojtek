@@ -13,6 +13,12 @@ class App extends Component {
         <Layout>
             <Switch>
                 <Route path="/login" component={Login}/>
+                <Route exact path="/logout" render={() => {
+                    console.log('logout method fired')
+                    localStorage.clear()
+                    window.location.href = '/'
+                }
+                }/>
                 <Route path="/register" component={Register}/>
                 <Route path="/" exact component={LostWorld}/>
             </Switch>

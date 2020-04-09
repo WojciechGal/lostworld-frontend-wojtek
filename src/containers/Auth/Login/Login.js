@@ -85,11 +85,6 @@ class Login extends Component {
             roles: null
         }
 
-        var bodyFormData = new FormData();
-
-        bodyFormData.set('username', this.state.loginForm.username.value);
-        bodyFormData.set('password', this.state.loginForm.password.value,);
-
         // const formData = new FormData();
         // // formData.append('id', loginData.id);
         // formData.append('username', loginData.username);
@@ -99,7 +94,6 @@ class Login extends Component {
         // formData.append('roles', loginData.roles);
 
         console.log(loginData);
-        console.log("formdata : " + bodyFormData);
 
         // axios.post("http://10.5.91.132:8080/users/login", loginData)
         //     .then(response => console.log(response))
@@ -146,13 +140,17 @@ class Login extends Component {
 
         axios({
             method: 'post',
-            url: 'http://30d194e4.ngrok.io/users/login',
-            data: bodyFormData,
-            headers: {'Content-Type': 'multipart/form-data' }
+            url: 'http://a2b8b17a.ngrok.io/users/login',
+            data: {
+                username: loginData.username,
+                password: loginData.password
+            }
         })
             .then(function (response) {
                 //handle success
                 console.log(response);
+
+                localStorage.setItem('token', response.data.accessToken)
             })
             .catch(function (response) {
                 //handle error
