@@ -6,7 +6,7 @@ import axios from "axios";
 function amisawyer() {
     axios({
         method: 'get',
-        url: 'http://a2b8b17a.ngrok.io/users/sec',
+        url: 'http://fdfb6477.ngrok.io/users/sec',
         headers: {'Authorization': 'Bearer ' + localStorage.getItem('token') }
     })
         .then(function (response) {
@@ -20,7 +20,7 @@ function amisawyer() {
 
     axios({
         method: 'get',
-        url: 'http://a2b8b17a.ngrok.io/users/check',
+        url: 'http://fdfb6477.ngrok.io/users/check',
         headers: {'Authorization': 'Bearer ' + localStorage.getItem('token') }
     })
         .then(function (response) {
